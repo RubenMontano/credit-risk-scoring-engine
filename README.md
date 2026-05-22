@@ -26,15 +26,15 @@ This project engineers a **market-specific scoring system for Spain**, resolving
 Raw Bondora Data (179K records)
         │
         ▼
-┌─────────────────────────────────┐
-│  STAGE 1 · DATA ENGINEERING     │
-│  • Geographic filter → Spain    │
-│  • Temporal filter → 2013–2020  │
-│  • Active loan exclusion        │
-│  • Data leakage audit (2 passes)│
-│  • Endogeneity purge            │
+┌──────────────────────────────────┐
+│  STAGE 1 · DATA ENGINEERING      │
+│  • Geographic filter → Spain     │
+│  • Temporal filter → 2013–2020   │
+│  • Active loan exclusion         │
+│  • Data leakage audit (2 passes) │
+│  • Endogeneity purge             │
 │  → 24,352 clean records / 35 vars│
-└────────────────┬────────────────┘
+└────────────────┬─────────────────┘
                  │
         ▼
 ┌─────────────────────────────────┐
@@ -45,17 +45,17 @@ Raw Bondora Data (179K records)
 └────────────────┬────────────────┘
                  │
         ▼
-┌──────────────────────────────────────────────────┐
-│  STAGE 3 · MODEL COMPETITION                      │
+┌────────────────────────────────────────────────────┐
+│  STAGE 3 · MODEL COMPETITION                       │
 │                                                    │
 │  Benchmark (Bondora PD)   →  AUC: 0.4928 ❌       │
 │  Logistic Regression      →  AUC: 0.6522 ⚠️       │
 │  CatBoost (optimized)     →  AUC: 0.7071 ✅       │
 │                                                    │
-│  Hyperparameter search: RandomizedSearchCV (CV=3) │
-│  Depth: 8 · Iterations: 500 · LR: 0.05            │
-│  Class imbalance: auto_class_weights='Balanced'   │
-└────────────────┬─────────────────────────────────┘
+│  Hyperparameter search: RandomizedSearchCV (CV=3)  │
+│  Depth: 8 · Iterations: 500 · LR: 0.05             │
+│  Class imbalance: auto_class_weights='Balanced'    │
+└────────────────┬───────────────────────────────────┘
                  │
         ▼
 ┌─────────────────────────────────┐
@@ -117,8 +117,8 @@ Net estimated savings              →    €2,271,211
 
 | Rating | Predicted PD | Min. Risk Premium | Decision |
 |---|---|---|---|
-| A | 0% – 5% | 2.56% | ✅ Approved |
-| B | 5% – 10% | 8.11% | ✅ Approved |
+| A | 0% – 5%   | 2.56%  | ✅ Approved |
+| B | 5% – 10%  | 8.11%  | ✅ Approved |
 | C | 10% – 15% | 14.29% | ✅ Approved |
 | D | 15% – 20% | 21.21% | ✅ Approved |
 | E | 20% – 26% | 29.97% | ✅ Approved |
@@ -187,7 +187,7 @@ Explainability  SHAP (SHapley Additive exPlanations)
 Data            Pandas · NumPy
 Optimization    RandomizedSearchCV · Early Stopping (patience=50)
 Evaluation      ROC-AUC · Gini · KS · PR-AUC · Brier Score · Confusion Matrix
-Dataset         Bondora P2P Lending — Spain cohort (2013–2020)
+Dataset         Bondora P2P Lending — Spain cohort (2013–2020): https://www.kaggle.com/datasets/sid321axn/bondora-peer-to-peer-lending-loan-data
 ```
 
 ---
