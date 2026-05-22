@@ -196,17 +196,11 @@ Dataset         Bondora P2P Lending — Spain cohort (2013–2020): https://www.
 
 ```
 ├── data/
-│   └── bondora_spain_clean.csv        # Processed dataset (Spain-only, closed loans)
+│   └── bondora_spain_clean.csv           # Processed dataset (Spain-only, closed loans)
 ├── notebooks/
-│   ├── 01_eda_and_preprocessing.ipynb
-│   ├── 02_feature_engineering.ipynb
-│   ├── 03_model_training.ipynb
-│   ├── 04_xai_shap_analysis.ipynb
-│   └── 05_stress_testing.ipynb
-├── src/
-│   ├── preprocessing.py
-│   ├── model.py
-│   └── explainability.py
+│   └── credit_risk_scoring_spain.ipynb   # End-to-end Master Notebook (EDA, Training, XAI & Stress Test)
+├── docs/
+│   └── Memoria_TFM.pdf                   # Full academic research and mathematical proofs
 ├── outputs/
 │   ├── shap_summary_plot.png
 │   ├── roc_curve.png
